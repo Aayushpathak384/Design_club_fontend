@@ -91,7 +91,7 @@ function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#contact"
+              href="#join"
               className="group inline-flex items-center rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_-10px_rgba(34,211,238,0.9)] transition hover:translate-y-[-2px]"
             >
               Join Us
