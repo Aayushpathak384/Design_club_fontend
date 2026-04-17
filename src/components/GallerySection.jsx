@@ -3,24 +3,39 @@ import { AnimatePresence, motion as Motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 
 function GallerySection() {
+  const sourceGalleryImages = [
+    'https://iete-frontend.onrender.com/gallery/2020-2024/1.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/2.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/3.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/4.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/5.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/6.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/7.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/8.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/9.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/10.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/12.jpg',
+    'https://iete-frontend.onrender.com/gallery/2020-2024/13.jpg',
+  ]
+
   const galleryGroups = {
     '2020–2024': [
-      { src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80', alt: 'Workshop discussion with students' },
-      { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80', alt: 'Team coding together on laptops' },
-      { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80', alt: 'Electronics and robotics setup' },
-      { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', alt: 'Presentation on a whiteboard' },
+      { src: sourceGalleryImages[0], alt: 'IETE gallery memory from 2020–2024' },
+      { src: sourceGalleryImages[1], alt: 'IETE gallery memory from 2020–2024' },
+      { src: sourceGalleryImages[2], alt: 'IETE gallery memory from 2020–2024' },
+      { src: sourceGalleryImages[3], alt: 'IETE gallery memory from 2020–2024' },
     ],
     '2021–2025': [
-      { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80', alt: 'Hackathon team planning session' },
-      { src: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80', alt: 'Laptop and notes during build night' },
-      { src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80', alt: 'Student collaboration in a workshop' },
-      { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80', alt: 'Pair programming on a technical project' },
+      { src: sourceGalleryImages[4], alt: 'IETE gallery memory from 2021–2025' },
+      { src: sourceGalleryImages[5], alt: 'IETE gallery memory from 2021–2025' },
+      { src: sourceGalleryImages[6], alt: 'IETE gallery memory from 2021–2025' },
+      { src: sourceGalleryImages[7], alt: 'IETE gallery memory from 2021–2025' },
     ],
     '2022–2026': [
-      { src: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1200&q=80', alt: 'Modern collaborative workspace' },
-      { src: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80', alt: 'Code review and planning board' },
-      { src: 'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80', alt: 'Dark themed code display' },
-      { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80', alt: 'Team brainstorming at a table' },
+      { src: sourceGalleryImages[8], alt: 'IETE gallery memory from 2022–2026' },
+      { src: sourceGalleryImages[9], alt: 'IETE gallery memory from 2022–2026' },
+      { src: sourceGalleryImages[10], alt: 'IETE gallery memory from 2022–2026' },
+      { src: sourceGalleryImages[11], alt: 'IETE gallery memory from 2022–2026' },
     ],
   }
 

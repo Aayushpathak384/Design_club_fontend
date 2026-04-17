@@ -79,14 +79,16 @@ function Navbar() {
         }}
         className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border bg-slate-950/55 px-4 py-3 shadow-[0_0_50px_-18px_rgba(56,189,248,0.65)]"
       >
-        <Link to="/" className="group flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white transition hover:text-cyan-300">
-          <img
-            src="https://iete-frontend.onrender.com/images/iete.ico"
-            alt="IETE Logo"
-            className="h-9 w-9 rounded-lg border border-white/20 bg-white/90 object-contain p-1 transition duration-300 group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(103,232,249,0.45)]"
-            loading="lazy"
-          />
-          <span className="transition duration-300 group-hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.55)]">IETE HIT SF</span>
+        <Link
+          to="/"
+          className="group flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white transition hover:text-cyan-300"
+        >
+          <span className="grid h-10 w-10 place-content-center rounded-xl border border-cyan-300/30 bg-gradient-to-br from-cyan-300/20 via-slate-900/65 to-indigo-300/20 shadow-[0_0_22px_-10px_rgba(56,189,248,0.8)] backdrop-blur-md transition duration-300 group-hover:scale-105 group-hover:shadow-[0_0_28px_-8px_rgba(103,232,249,0.9)]">
+            <span className="font-heading text-xs font-bold tracking-[0.22em] text-cyan-100">IETE</span>
+          </span>
+          <span className="font-heading bg-gradient-to-r from-cyan-100 via-cyan-300 to-indigo-200 bg-clip-text text-transparent transition duration-300 group-hover:drop-shadow-[0_0_10px_rgba(103,232,249,0.7)]">
+            IETE HIT SF
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-3 text-sm text-slate-200 md:flex">
