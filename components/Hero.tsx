@@ -60,8 +60,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed text-balance"
           >
-            Join IETE Technical Society - where passionate developers, designers, and innovators 
-            come together to create, learn, and push the boundaries of technology.
+            Join IETE HIT Haldia - where students explore robotics, web development, and emerging technologies through workshops, events, and interactive sessions.
           </motion.p>
 
           {/* CTA Buttons */}

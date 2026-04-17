@@ -17,36 +17,36 @@ import {
 const domains = [
   {
     icon: Code2,
-    title: "Web Development",
+    title: "Workshops",
     description:
-      "Build modern, responsive websites and web applications using React, Next.js, and cutting-edge technologies.",
+      "We organize Workshops on trending topics such as Manual Robotics, Autonomous Robotics, Web Development, and more.",
     color: "from-blue-500 to-cyan-500",
     borderColor: "border-blue-500/30",
     glowColor: "hover:shadow-blue-500/20",
   },
   {
-    icon: Brain,
-    title: "AI & Machine Learning",
+    icon: Trophy,
+    title: "Events",
     description:
-      "Explore artificial intelligence, deep learning, and build intelligent systems that solve real-world problems.",
+      "Events like Robiteka, Online quizzing, technical competitions, and many exciting activities are organized regularly.",
     color: "from-purple-500 to-pink-500",
     borderColor: "border-purple-500/30",
     glowColor: "hover:shadow-purple-500/20",
   },
   {
-    icon: Trophy,
-    title: "Competitive Programming",
+    icon: Brain,
+    title: "Interactive Sessions",
     description:
-      "Sharpen problem-solving skills, master algorithms, and compete in national and international coding contests.",
+      "We organize small interactive sessions to teach students technical topics like Web Development, AI/ML, and more.",
     color: "from-amber-500 to-orange-500",
     borderColor: "border-amber-500/30",
     glowColor: "hover:shadow-amber-500/20",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
+    icon: Database,
+    title: "General Meetings",
     description:
-      "Create stunning user interfaces and seamless user experiences using Figma, Adobe XD, and design principles.",
+      "We organize regular GMs to discuss about latest Technical trends, social issues, and community building.",
     color: "from-pink-500 to-rose-500",
     borderColor: "border-pink-500/30",
     glowColor: "hover:shadow-pink-500/20",
@@ -61,10 +61,10 @@ const domains = [
     glowColor: "hover:shadow-green-500/20",
   },
   {
-    icon: Database,
-    title: "Data Science",
+    icon: Palette,
+    title: "UI/UX Design",
     description:
-      "Analyze large datasets, build predictive models, and extract meaningful insights using Python and R.",
+      "Create stunning user interfaces and seamless user experiences using Figma, Adobe XD, and design principles.",
     color: "from-indigo-500 to-violet-500",
     borderColor: "border-indigo-500/30",
     glowColor: "hover:shadow-indigo-500/20",

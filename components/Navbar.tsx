@@ -48,7 +48,7 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-lg opacity-80 group-hover:opacity-100 transition-opacity" />
               <Zap className="relative w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold gradient-text">IETE</span>
+            <span className="text-xl font-bold gradient-text">IETE HIT Haldia</span>
           </motion.a>
 
           {/* Desktop Navigation */}

@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IETE Technical Society | Build. Learn. Grow.",
-  description: "Join IETE - A premier technical society fostering innovation, learning, and growth in technology. Explore events, workshops, hackathons, and connect with a community of passionate developers.",
-  keywords: ["IETE", "technical society", "coding", "hackathons", "web development", "AI/ML", "competitive programming"],
+  title: "IETE HIT Haldia | Build. Learn. Grow.",
+  description: "IETE HIT Haldia Student Forum - Empowering students through workshops on robotics, web development, interactive sessions, and technical events like Robiteka. Join our community!",
+  keywords: ["IETE", "HIT Haldia", "technical society", "robotics", "web development", "Robiteka", "ECE", "workshops"],
 };
 
 export default function RootLayout({

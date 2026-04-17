@@ -46,11 +46,11 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-lg opacity-80 group-hover:opacity-100 transition-opacity" />
                 <Zap className="relative w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold gradient-text">IETE</span>
+              <span className="text-xl font-bold gradient-text">IETE HIT Haldia</span>
             </motion.a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Empowering students with cutting-edge technical skills and fostering 
-              a community of innovators and future tech leaders.
+              IETE HIT Haldia Student Forum - Empowering students with robotics, web development, 
+              and cutting-edge technical skills through workshops, events, and interactive sessions.
             </p>
             <div className="flex items-center gap-3">
               {footerLinks.social.map((social) => (
@@ -112,12 +112,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                <span>Engineering Block, University Campus, New Delhi - 110001</span>
+                <span>Ground Floor ECE Dept. HIT HALDIA, West Bengal</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:iete@college.edu" className="hover:text-foreground transition-colors">
-                  iete@college.edu
+                <a href="mailto:ietehitsf@gmail.com" className="hover:text-foreground transition-colors">
+                  ietehitsf@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">

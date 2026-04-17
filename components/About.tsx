@@ -53,10 +53,10 @@ export default function About() {
             Who <span className="gradient-text">We Are</span>
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed text-balance">
-            IETE Technical Society is a student-driven organization dedicated to fostering 
-            technical excellence, innovation, and collaboration. We bridge the gap between 
-            academic learning and industry requirements through workshops, hackathons, 
-            coding competitions, and project-based learning.
+            IETE HIT Haldia Student Forum is a student-driven organization dedicated to fostering 
+            technical excellence, innovation, and collaboration. We organize workshops on Manual &amp; Autonomous Robotics, 
+            interactive sessions on Web Development, events like Robiteka, and regular general meetings 
+            to discuss latest technical trends.
           </p>
         </motion.div>
 
