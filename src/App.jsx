@@ -1,34 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import AboutSection from './components/AboutSection'
-import DomainsSection from './components/DomainsSection'
-import EventsSection from './components/EventsSection'
-import TeamSection from './components/TeamSection'
-import AchievementsSection from './components/AchievementsSection'
-import MembershipSection from './components/MembershipSection'
-import GallerySection from './components/GallerySection'
-import TestimonialsSection from './components/TestimonialsSection'
-import CTASection from './components/CTASection'
 import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import Contact from './pages/Contact'
 
 function App() {
   return (
-    <div className="bg-slate-950 text-slate-100">
-      <Navbar />
-      <main>
-        <Hero />
-        <AboutSection />
-        <DomainsSection />
-        <EventsSection />
-        <AchievementsSection />
-        <TeamSection />
-        <MembershipSection />
-        <GallerySection />
-        <TestimonialsSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

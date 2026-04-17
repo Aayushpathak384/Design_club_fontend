@@ -1,40 +1,72 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion as Motion } from 'framer-motion'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { navLinks } from '../data/content'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeHash, setActiveHash] = useState('#home')
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
-    const sections = navLinks
-      .map((link) => document.querySelector(link.href))
-      .filter(Boolean)
+    
+    // Only detect sections on homepage
+    if (location.pathname === '/') {
+      const sections = navLinks
+        .map((link) => document.querySelector(link.href))
+        .filter(Boolean)
 
-    const detectSection = () => {
-      const position = window.scrollY + 160
-      for (const section of sections) {
-        if (
-          section.offsetTop <= position &&
-          section.offsetTop + section.offsetHeight > position
-        ) {
-          setActiveHash(`#${section.id}`)
-          break
+      const detectSection = () => {
+        const position = window.scrollY + 160
+        for (const section of sections) {
+          if (
+            section.offsetTop <= position &&
+            section.offsetTop + section.offsetHeight > position
+          ) {
+            setActiveHash(`#${section.id}`)
+            break
+          }
         }
+      }
+
+      window.addEventListener('scroll', onScroll)
+      window.addEventListener('scroll', detectSection)
+      detectSection()
+
+      return () => {
+        window.removeEventListener('scroll', onScroll)
+        window.removeEventListener('scroll', detectSection)
       }
     }
 
     window.addEventListener('scroll', onScroll)
-    window.addEventListener('scroll', detectSection)
-    detectSection()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [location.pathname])
 
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('scroll', detectSection)
+  const handleNavClick = (href) => {
+    if (href.startsWith('#')) {
+      // If on homepage, scroll to section
+      if (location.pathname === '/') {
+        const section = document.querySelector(href)
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+          setOpen(false)
+        }
+      } else {
+        // If on another page, navigate home and scroll
+        navigate('/')
+        setTimeout(() => {
+          const section = document.querySelector(href)
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
     }
-  }, [])
+  }
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 md:px-8">
@@ -47,29 +79,59 @@ function Navbar() {
         }}
         className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border bg-slate-950/55 px-4 py-3 shadow-[0_0_50px_-18px_rgba(56,189,248,0.65)]"
       >
-        <a href="#home" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/25 bg-gradient-to-br from-cyan-300 to-indigo-500 text-xs font-bold text-slate-950">
-            IETE
-          </span>
+        <Link to="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white hover:text-cyan-300 transition">
+          <img
+            src="https://iete-frontend.onrender.com/images/iete.ico"
+            alt="IETE Logo"
+            className="h-9 w-9 rounded-lg border border-white/20 bg-white/90 object-contain p-1"
+            loading="lazy"
+          />
           IETE HIT SF
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-3 text-sm text-slate-200 md:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`rounded-lg px-3 py-2 transition duration-300 hover:text-cyan-300 ${
-                  activeHash === link.href
-                    ? 'bg-cyan-300/10 text-cyan-200'
-                    : 'text-slate-200'
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isContact = link.href === '#contact'
+            return (
+              <li key={link.href}>
+                {isContact ? (
+                  <Link
+                    to="/contact"
+                    className="rounded-lg px-3 py-2 transition duration-300 hover:text-cyan-300 text-slate-200"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className={`rounded-lg px-3 py-2 transition duration-300 hover:text-cyan-300 ${
+                      activeHash === link.href
+                        ? 'bg-cyan-300/10 text-cyan-200'
+                        : 'text-slate-200'
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                )}
+              </li>
+            )
+          })}
         </ul>
+
+        <div className="hidden items-center gap-2 md:flex">
+          <button
+            onClick={() => handleNavClick('#join')}
+            className="rounded-lg bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 hover:-translate-y-0.5"
+          >
+            Register Now
+          </button>
+          <Link
+            to="/admin"
+            className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/10 hover:border-indigo-300/60"
+          >
+            Admin Login
+          </Link>
+        </div>
 
         <button
           aria-label="Toggle menu"
@@ -94,22 +156,55 @@ function Navbar() {
             className="mx-auto mt-2 max-w-6xl rounded-2xl border border-indigo-400/25 bg-slate-950/95 p-4 shadow-2xl md:hidden"
           >
             <ul className="grid gap-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`block rounded-lg px-3 py-2 transition ${
-                      activeHash === link.href
-                        ? 'bg-cyan-300/10 text-cyan-200'
-                        : 'text-slate-200 hover:bg-white/5 hover:text-cyan-300'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isContact = link.href === '#contact'
+                return (
+                  <li key={link.href}>
+                    {isContact ? (
+                      <Link
+                        to="/contact"
+                        onClick={() => setOpen(false)}
+                        className="block rounded-lg px-3 py-2 transition text-slate-200 hover:bg-white/5 hover:text-cyan-300"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          handleNavClick(link.href)
+                          setOpen(false)
+                        }}
+                        className={`block w-full text-left rounded-lg px-3 py-2 transition ${
+                          activeHash === link.href
+                            ? 'bg-cyan-300/10 text-cyan-200'
+                            : 'text-slate-200 hover:bg-white/5 hover:text-cyan-300'
+                        }`}
+                      >
+                        {link.label}
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
+            <div className="mt-4 flex flex-col gap-2 border-t border-white/10 pt-3">
+              <button
+                onClick={() => {
+                  handleNavClick('#join')
+                  setOpen(false)
+                }}
+                className="rounded-lg bg-cyan-300 px-4 py-2 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
+              >
+                Register Now
+              </button>
+              <Link
+                to="/admin"
+                onClick={() => setOpen(false)}
+                className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-center text-sm font-semibold text-slate-100 transition hover:bg-white/10"
+              >
+                Admin Login
+              </Link>
+            </div>
           </Motion.div>
         ) : null}
       </AnimatePresence>

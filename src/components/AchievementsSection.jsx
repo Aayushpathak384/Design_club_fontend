@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import { motion as Motion } from 'framer-motion'
 import { achievements } from '../data/content'
 import SectionHeading from './SectionHeading'
+import GlassCard from './GlassCard'
 
 function Counter({ target, suffix }) {
   const [count, setCount] = useState(0)
@@ -46,19 +46,16 @@ function AchievementsSection() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
-            <Motion.article
+            <GlassCard
               key={item.label}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group rounded-2xl border border-cyan-300/20 bg-slate-900/65 p-5 shadow-[0_20px_45px_-28px_rgba(34,211,238,0.8)] backdrop-blur-xl"
+              delay={index * 0.08}
+              className="group border-cyan-300/20 p-5 shadow-[0_20px_45px_-28px_rgba(34,211,238,0.8)]"
             >
               <Counter target={item.value} suffix={item.suffix} />
               <h3 className="mt-4 text-lg font-semibold text-white">{item.label}</h3>
               <p className="mt-2 text-sm text-slate-300">{item.description}</p>
               <div className="mt-4 h-px bg-gradient-to-r from-cyan-300/50 via-indigo-300/20 to-transparent" />
-            </Motion.article>
+            </GlassCard>
           ))}
         </div>
       </div>

@@ -1,6 +1,23 @@
-import { motion as Motion } from 'framer-motion'
+import {
+  FaCode,
+  FaLaptopCode,
+  FaPalette,
+  FaUsers,
+  FaRobot,
+} from 'react-icons/fa'
+import { GiProcessor } from 'react-icons/gi'
 import { domains } from '../data/content'
 import SectionHeading from './SectionHeading'
+import GlassCard from './GlassCard'
+
+const iconMap = {
+  code: FaCode,
+  workshop: FaLaptopCode,
+  events: GiProcessor,
+  community: FaUsers,
+  design: FaPalette,
+  robotics: FaRobot,
+}
 
 function DomainsSection() {
   return (
@@ -13,24 +30,26 @@ function DomainsSection() {
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {domains.map((domain, index) => (
-            <Motion.article
+          {domains.map((domain, index) => {
+            const Icon = iconMap[domain.icon] || FaCode
+
+            return (
+            <GlassCard
               key={domain.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/55 p-5 shadow-xl backdrop-blur-md"
+              delay={index * 0.08}
+              className="group relative overflow-hidden p-5"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${domain.gradient} opacity-0 transition duration-300 group-hover:opacity-100`} />
               <div className="relative z-10 space-y-4">
-                <p className="text-xs font-semibold tracking-[0.25em] text-cyan-200">{domain.icon}</p>
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 text-cyan-200">
+                  <Icon className="text-lg" />
+                </div>
                 <h3 className="text-xl font-semibold text-white">{domain.title}</h3>
                 <p className="text-sm text-slate-300">{domain.description}</p>
               </div>
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition duration-300 group-hover:ring-cyan-300/45" />
-            </Motion.article>
-          ))}
+            </GlassCard>
+          )})}
         </div>
       </div>
     </section>

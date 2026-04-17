@@ -11,71 +11,107 @@ export const domains = [
   {
     title: 'Web Development',
     description:
-      'Build full-stack products, sharpen UI craftsmanship, and deploy projects that solve real campus needs.',
-    icon: '01',
+      'Interactive sessions to teach students technical skills like web development from foundations to modern stacks.',
+    icon: 'code',
     gradient: 'from-cyan-500/25 to-blue-500/10',
   },
   {
-    title: 'Artificial Intelligence',
+    title: 'Workshops',
     description:
-      'Learn ML fundamentals, train practical models, and explore how AI can power social impact ideas.',
-    icon: '02',
+      'Workshops on trending topics such as Manual Robotics, Autonomous Robotics, and modern engineering tools.',
+    icon: 'workshop',
     gradient: 'from-violet-500/25 to-fuchsia-500/10',
   },
   {
-    title: 'Competitive Programming',
+    title: 'Events & Hackathons',
     description:
-      'Master problem solving with weekly contests, peer reviews, and strategy sessions for top coding platforms.',
-    icon: '03',
+      'Events like Robiteka, online quizzing, coding competitions, and project showcases across the academic year.',
+    icon: 'events',
     gradient: 'from-indigo-500/25 to-sky-500/10',
   },
   {
-    title: 'Open Source',
+    title: 'General Meetings',
     description:
-      'Contribute to public projects, learn collaboration workflows, and create a developer portfolio that stands out.',
-    icon: '04',
+      'Regular meetings to discuss technical trends, social issues, and the roadmap for student-led initiatives.',
+    icon: 'community',
     gradient: 'from-emerald-500/25 to-teal-500/10',
   },
   {
     title: 'UI/UX Design',
     description:
       'Design user-first interfaces, build visual systems, and turn product ideas into polished interactive experiences.',
-    icon: '05',
+    icon: 'design',
     gradient: 'from-pink-500/25 to-purple-500/10',
   },
   {
     title: 'Robotics & IoT',
     description:
       'Prototype smart systems, sensors, and automation projects through practical workshops and collaborative labs.',
-    icon: '06',
+    icon: 'robotics',
     gradient: 'from-blue-500/25 to-violet-500/10',
+  },
+]
+
+export const upcomingEvent = {
+  name: 'Robiteka',
+  date: 'May 18, 2026',
+  tag: 'Flagship Event',
+  details: 'A signature robotics and innovation event featuring competition tracks, demos, and mentor support. Compete in manual and autonomous categories, showcase your prototypes, and connect with industry experts.',
+  venue: 'ECE Department, HIT Haldia',
+  mode: 'Hybrid',
+}
+
+export const pastEvents = [
+  {
+    name: 'Online Technical Quiz',
+    date: 'June 07, 2026',
+    tag: 'Challenge',
+    details: 'A fast-paced quiz series designed to test fundamentals across electronics, coding, and current tech trends.',
+    venue: 'Online',
+    mode: 'Virtual',
+  },
+  {
+    name: 'Web Development Sprint',
+    date: 'June 26, 2026',
+    tag: 'Interactive Session',
+    details: 'Hands-on build sessions where members collaborate on responsive interfaces and deployable mini-projects.',
+    venue: 'ECE Seminar Hall',
+    mode: 'Hybrid',
+  },
+  {
+    name: 'Autonomous Robotics Workshop',
+    date: 'July 12, 2026',
+    tag: 'Workshop',
+    details: 'A practical robotics workshop covering sensors, control logic, and team-based prototype execution.',
+    venue: 'ECE Lab Block',
+    mode: 'Hybrid',
   },
 ]
 
 export const events = [
   {
-    name: 'HackSprint 24',
+    name: 'Robiteka',
     date: 'May 18, 2026',
-    tag: 'Hackathon',
-    details: '24-hour build marathon with mentors, theme tracks, and final demo day.',
+    tag: 'Flagship Event',
+    details: 'A signature robotics and innovation event featuring competition tracks, demos, and mentor support.',
   },
   {
-    name: 'AI Build Week',
+    name: 'Online Technical Quiz',
     date: 'June 07, 2026',
-    tag: 'Workshop',
-    details: 'Hands-on sessions covering model training, deployment, and responsible AI.',
+    tag: 'Challenge',
+    details: 'A fast-paced quiz series designed to test fundamentals across electronics, coding, and current tech trends.',
   },
   {
-    name: 'Frontend Forge',
+    name: 'Web Development Sprint',
     date: 'June 26, 2026',
-    tag: 'Bootcamp',
-    details: 'A design-to-code sprint focused on animations, accessibility, and performance.',
+    tag: 'Interactive Session',
+    details: 'Hands-on build sessions where members collaborate on responsive interfaces and deployable mini-projects.',
   },
   {
-    name: 'Robotics Jam',
+    name: 'Autonomous Robotics Workshop',
     date: 'July 12, 2026',
-    tag: 'Tech Session',
-    details: 'Interactive hardware-focused sessions on robotics fundamentals, control systems, and prototypes.',
+    tag: 'Workshop',
+    details: 'A practical robotics workshop covering sensors, control logic, and team-based prototype execution.',
   },
 ]
 
@@ -98,38 +134,67 @@ export const achievements = [
     label: 'Projects Built',
     description: 'Real products, open-source contributions, and interdisciplinary prototypes.',
   },
+]
+
+export const facultyMembers = [
   {
-    value: 16,
-    suffix: 'K+',
-    label: 'Community Reach',
-    description: 'Engagement through social channels, events, and collaborative initiatives.',
+    name: 'Prof. Bikash Bepari',
+    role: 'Dean, Student Welfare Committee',
+    image: 'https://iete-frontend.onrender.com/images/bb%20sir.jpg',
+  },
+  {
+    name: 'Prof. Dr. Chanchal Kr. De',
+    role: 'HOD, Department of ECE',
+    image: 'https://iete-frontend.onrender.com/images/hodsir.jpg',
+  },
+  {
+    name: 'Prof. Surajit Mukherjee',
+    role: 'Faculty Coordinator, IETE HIT SF',
+    image: 'https://iete-frontend.onrender.com/images/sm%20sir.jpg',
+  },
+  {
+    name: 'Prof. Dibyendu Chowdhury',
+    role: 'Treasurer, IETE HIT SF',
+    image: 'https://iete-frontend.onrender.com/images/dc%20sir.jpg',
   },
 ]
 
 export const teamMembers = [
   {
-    name: 'Prof. Bikash Bepari',
-    role: 'Dean, Student Welfare Committee',
-    image:
-      'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80',
+    name: 'Aayush Pathak',
+    role: 'Lead Developer',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=60',
   },
   {
-    name: 'Prof. Dr. Chanchal Kr. De',
-    role: 'HOD, Department of ECE',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80',
+    name: 'Priya Sharma',
+    role: 'UI/UX Designer',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=60',
   },
   {
-    name: 'Prof. Surajit Mukherjee',
-    role: 'Faculty Coordinator, IETE HIT SF',
-    image:
-      'https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=900&q=80',
+    name: 'Rohit Kumar',
+    role: 'Robotics Expert',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=500&q=60',
   },
   {
-    name: 'Prof. Dibyendu Chowdhury',
-    role: 'Treasurer, IETE HIT SF',
-    image:
-      'https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=80',
+    name: 'Akshara Verma',
+    role: 'Community Manager',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=60',
+  },
+  {
+    name: 'Arjun Singh',
+    role: 'Backend Developer',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=60',
+  },
+  {
+    name: 'Maya Patel',
+    role: 'AI/ML Lead',
+    department: 'ECE',
+    image: 'https://images.unsplash.com/photo-1507599912169-403928601894?auto=format&fit=crop&w=500&q=60',
   },
 ]
 

@@ -12,7 +12,7 @@ function GallerySection() {
           description="Snapshots from workshops, technical events, build nights, and collaborative team moments."
         />
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {gallery.map((item, index) => (
             <Motion.figure
               key={item.src}
@@ -27,7 +27,7 @@ function GallerySection() {
                 alt={item.alt}
                 loading="lazy"
                 className={`w-full object-cover transition duration-500 group-hover:scale-110 ${
-                  index % 3 === 0 ? 'h-64' : 'h-52'
+                  index % 4 === 0 ? 'h-56 lg:h-64' : 'h-48 lg:h-52'
                 }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent opacity-70 transition group-hover:opacity-90" />
