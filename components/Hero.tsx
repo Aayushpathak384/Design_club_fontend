@@ -1,8 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import FloatingShapes from "./FloatingShapes";
+
+const FloatingShapes = dynamic(() => import("./FloatingShapes"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function Hero() {
   return (
