@@ -79,14 +79,14 @@ function Navbar() {
         }}
         className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border bg-slate-950/55 px-4 py-3 shadow-[0_0_50px_-18px_rgba(56,189,248,0.65)]"
       >
-        <Link to="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white hover:text-cyan-300 transition">
+        <Link to="/" className="group flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white transition hover:text-cyan-300">
           <img
             src="https://iete-frontend.onrender.com/images/iete.ico"
             alt="IETE Logo"
-            className="h-9 w-9 rounded-lg border border-white/20 bg-white/90 object-contain p-1"
+            className="h-9 w-9 rounded-lg border border-white/20 bg-white/90 object-contain p-1 transition duration-300 group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(103,232,249,0.45)]"
             loading="lazy"
           />
-          IETE HIT SF
+          <span className="transition duration-300 group-hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.55)]">IETE HIT SF</span>
         </Link>
 
         <ul className="hidden items-center gap-3 text-sm text-slate-200 md:flex">
