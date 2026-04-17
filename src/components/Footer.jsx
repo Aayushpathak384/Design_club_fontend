@@ -48,17 +48,23 @@ function Footer() {
             transition={{ duration: 0.55 }}
             className="lg:col-span-2"
           >
-            <div className="mb-4 flex items-center gap-3">
-              <span className="grid h-10 w-10 place-content-center rounded-xl border border-cyan-300/30 bg-gradient-to-br from-cyan-300/20 via-slate-900/65 to-indigo-300/20 shadow-[0_0_22px_-10px_rgba(56,189,248,0.8)] backdrop-blur-md">
-                <span className="font-heading text-[10px] font-bold tracking-[0.22em] text-cyan-100">IETE</span>
+            <Link
+              to="/"
+              className="mb-4 flex w-fit items-center gap-3 text-white transition-transform duration-300 hover:scale-[1.02]"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-300/40 bg-slate-100/95 p-1">
+                <img
+                  src="/logo.png"
+                  alt="IETE Logo"
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </span>
               <div>
-                <Link to="/" className="transition hover:text-cyan-300">
-                  <h3 className="text-lg font-bold text-white">IETE HIT SF</h3>
-                </Link>
+                <h3 className="font-heading text-lg font-bold text-white">IETE HIT SF</h3>
                 <p className="text-xs text-slate-400">Indian Institute of Electronics and Telecommunication Engineers</p>
               </div>
-            </div>
+            </Link>
             <p className="text-sm text-slate-300 mb-4">
               A thriving community of innovators, builders, and learners fostering technical excellence and collaboration at HIT Haldia.
             </p>
