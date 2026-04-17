@@ -1,10 +1,13 @@
 import { testimonials } from '../data/content'
 import { motion as Motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import SectionHeading from './SectionHeading'
 import GlassCard from './GlassCard'
+import { handleRegistrationRedirect } from '../utils/registration'
 
 function TestimonialsSection() {
   const avatarColors = ['from-cyan-400 to-cyan-600', 'from-indigo-400 to-indigo-600', 'from-purple-400 to-purple-600']
+  const navigate = useNavigate()
 
   return (
     <section id="testimonials" className="px-4 py-20 md:px-8">
@@ -62,14 +65,13 @@ function TestimonialsSection() {
           <p className="text-slate-300 mb-4">
             Inspired? Join our community and build your own success story.
           </p>
-          <a
-            href="https://google.com"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => handleRegistrationRedirect(navigate)}
             className="inline-flex rounded-lg bg-indigo-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-600 hover:-translate-y-0.5"
           >
             Join IETE HIT SF Today
-          </a>
+          </button>
         </Motion.div>
       </div>
     </section>

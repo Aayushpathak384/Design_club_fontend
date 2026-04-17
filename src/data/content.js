@@ -272,3 +272,6 @@ export const testimonials = [
     title: 'AI/ML Community Member',
   },
 ]
+
+// Keep this empty until a live form URL is available.
+export const registrationFormUrl = ''

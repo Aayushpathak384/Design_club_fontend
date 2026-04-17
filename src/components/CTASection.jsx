@@ -1,7 +1,10 @@
 import { motion as Motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { handleRegistrationRedirect } from '../utils/registration'
 
 function CTASection() {
+  const navigate = useNavigate()
+
   return (
     <section id="join" className="px-4 pb-24 pt-16 md:px-8">
       <Motion.div
@@ -59,16 +62,15 @@ function CTASection() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
-          <Motion.a
-            href="https://google.com"
-            target="_blank"
-            rel="noreferrer"
+          <Motion.button
+            type="button"
+            onClick={() => handleRegistrationRedirect(navigate)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="rounded-xl bg-cyan-300 px-8 py-3.5 text-base font-semibold text-slate-950 transition hover:bg-cyan-200 shadow-lg hover:shadow-cyan-300/50"
           >
             Join the Community
-          </Motion.a>
+          </Motion.button>
           <Link
             to="/contact"
             className="rounded-xl border border-cyan-300/60 bg-cyan-300/10 px-8 py-3.5 text-base font-semibold text-cyan-200 transition hover:bg-cyan-300/20 hover:border-cyan-300"

@@ -2,8 +2,12 @@ import { upcomingEvent, pastEvents } from '../data/content'
 import SectionHeading from './SectionHeading'
 import GlassCard from './GlassCard'
 import { motion as Motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import { handleRegistrationRedirect } from '../utils/registration'
 
 function EventsSection() {
+  const navigate = useNavigate()
+
   return (
     <section id="events" className="px-4 py-20 md:px-8">
       <div className="mx-auto w-full max-w-6xl space-y-14">
@@ -51,7 +55,11 @@ function EventsSection() {
                 </div>
               </div>
 
-              <button className="mt-4 rounded-xl bg-cyan-300 px-8 py-3 text-base font-semibold text-slate-950 transition hover:bg-cyan-200 hover:-translate-y-0.5 hover:shadow-lg">
+              <button
+                type="button"
+                onClick={() => handleRegistrationRedirect(navigate)}
+                className="mt-4 rounded-xl bg-cyan-300 px-8 py-3 text-base font-semibold text-slate-950 transition hover:bg-cyan-200 hover:-translate-y-0.5 hover:shadow-lg"
+              >
                 Register Now
               </button>
             </div>

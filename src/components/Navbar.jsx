@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion as Motion } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { navLinks } from '../data/content'
+import { handleRegistrationRedirect } from '../utils/registration'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -122,7 +123,7 @@ function Navbar() {
 
         <div className="hidden items-center gap-2 md:flex">
           <button
-            onClick={() => handleNavClick('#join')}
+            onClick={() => handleRegistrationRedirect(navigate)}
             className="rounded-lg bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 hover:-translate-y-0.5"
           >
             Register Now
@@ -192,7 +193,7 @@ function Navbar() {
             <div className="mt-4 flex flex-col gap-2 border-t border-white/10 pt-3">
               <button
                 onClick={() => {
-                  handleNavClick('#join')
+                  handleRegistrationRedirect(navigate)
                   setOpen(false)
                 }}
                 className="rounded-lg bg-cyan-300 px-4 py-2 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"

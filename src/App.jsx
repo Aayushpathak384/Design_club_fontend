@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import Contact from './pages/Contact'
+import Register from './pages/Register'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </div>
